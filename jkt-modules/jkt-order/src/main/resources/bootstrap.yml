@@ -1,0 +1,25 @@
+server:
+  port: 7001
+
+spring:
+  application:
+    name: jkt-order
+  #配置中心
+  cloud:
+    config:
+      fail-fast: true
+      name: ${spring.application.name}
+      profile: ${spring.profiles.active}
+      discovery:
+        enabled: true
+        service-id: jkt-config
+  profiles:
+    active: local
+
+# 注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://admin:admin@127.0.0.1:8761/eureka/

@@ -1,0 +1,17 @@
+server:
+  port: 7000
+spring:
+  profiles:
+    active: dev
+  application:
+    name: jkt-user
+
+
+
+# 注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://admin:admin@127.0.0.1:8761/eureka/

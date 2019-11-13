@@ -1,0 +1,32 @@
+
+server:
+  port: 8761
+
+spring:
+  security:
+    user:
+      name: admin
+      password: admin
+  cloud:
+    config:
+      enabled: false
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: eureka
+  profiles:
+    active: test
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+       defaultZone: http://admin:admin@${eureka.instance.hostname}:${server.port}/${spring.application.name}/

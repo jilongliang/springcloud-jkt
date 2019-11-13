@@ -1,0 +1,5 @@
+
+security:
+  encode:
+    # 前端密码密钥，必须16位
+    key: 'flong1flong2flong3flong4'
