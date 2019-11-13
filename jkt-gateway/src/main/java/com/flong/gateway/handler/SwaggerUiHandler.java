@@ -23,21 +23,21 @@ import java.util.Optional;
 @Slf4j
 @Component
 public class SwaggerUiHandler implements HandlerFunction<ServerResponse> {
-	@Autowired(required = false)
-	private UiConfiguration uiConfiguration;
+    @Autowired(required = false)
+    private UiConfiguration uiConfiguration;
 
-	/**
-	 * Handle the given request.
-	 *
-	 * @param request the request to handler
-	 * @return the response
-	 */
-	@Override
-	public Mono<ServerResponse> handle(ServerRequest request) {
-		return ServerResponse.status(HttpStatus.OK)
-			.contentType(MediaType.APPLICATION_JSON_UTF8)
-			.body(BodyInserters.fromObject(
-				Optional.ofNullable(uiConfiguration)
-					.orElse(UiConfigurationBuilder.builder().build())));
-	}
+    /**
+     * Handle the given request.
+     *
+     * @param request the request to handler
+     * @return the response
+     */
+    @Override
+    public Mono<ServerResponse> handle(ServerRequest request) {
+        return ServerResponse.status(HttpStatus.OK)
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .body(BodyInserters.fromObject(
+                        Optional.ofNullable(uiConfiguration)
+                                .orElse(UiConfigurationBuilder.builder().build())));
+    }
 }

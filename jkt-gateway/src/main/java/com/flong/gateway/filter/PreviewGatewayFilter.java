@@ -18,24 +18,24 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class PreviewGatewayFilter extends AbstractGatewayFilterFactory {
-	private static final String TOKEN = "token";
+    private static final String TOKEN = "token";
 
 
-	@Override
-	public GatewayFilter apply(Object config) {
-		return (exchange, chain) -> {
-			ServerHttpRequest request = exchange.getRequest();
+    @Override
+    public GatewayFilter apply(Object config) {
+        return (exchange, chain) -> {
+            ServerHttpRequest request = exchange.getRequest();
 
-			// GET，直接向下执行
-			if (StrUtil.equalsIgnoreCase(request.getMethodValue(), HttpMethod.GET.name()) ||
-				StrUtil.containsIgnoreCase(request.getURI().getPath(), TOKEN)) {
-				return chain.filter(exchange);
-			}
+            // GET，直接向下执行
+            if (StrUtil.equalsIgnoreCase(request.getMethodValue(), HttpMethod.GET.name()) ||
+                    StrUtil.containsIgnoreCase(request.getURI().getPath(), TOKEN)) {
+                return chain.filter(exchange);
+            }
 
-			log.warn("演示环境不能操作-> {},{}", request.getMethodValue(), request.getURI().getPath());
-			ServerHttpResponse response = exchange.getResponse();
-			response.setStatusCode(HttpStatus.LOCKED);
-			return response.setComplete();
-		};
-	}
+            log.warn("演示环境不能操作-> {},{}", request.getMethodValue(), request.getURI().getPath());
+            ServerHttpResponse response = exchange.getResponse();
+            response.setStatusCode(HttpStatus.LOCKED);
+            return response.setComplete();
+        };
+    }
 }

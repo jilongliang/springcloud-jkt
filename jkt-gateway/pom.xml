@@ -51,7 +51,7 @@
 
     <build>
 
-        <finalName>gateway</finalName>
+        <finalName>jkt-gateway</finalName>
         <!-- 一定要声明如下配置 打包xml 到Jar包 -->
         <resources>
             <resource>

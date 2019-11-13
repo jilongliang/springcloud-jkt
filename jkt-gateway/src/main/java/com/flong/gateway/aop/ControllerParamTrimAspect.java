@@ -52,7 +52,7 @@ public class ControllerParamTrimAspect {
     private Object getObject(ProceedingJoinPoint point) throws Throwable {
         String strClassName = point.getTarget().getClass().getName();
         String strMethodName = point.getSignature().getName();
-        log.debug("拦截请求参数：{}.{}",strClassName,strMethodName);
+        log.debug("拦截请求参数：{}.{}", strClassName, strMethodName);
         Object[] args = point.getArgs();
         if (args == null || args.length == 0) {
             point.proceed();

@@ -21,6 +21,6 @@ import java.util.List;
 @ConfigurationProperties(prefix = "ignore")
 public class FilterIgnorePropertiesConfig {
 
-    private List<String> clients          = new ArrayList<>();
+    private List<String> clients = new ArrayList<>();
     private List<String> swaggerProviders = new ArrayList<>();
 }

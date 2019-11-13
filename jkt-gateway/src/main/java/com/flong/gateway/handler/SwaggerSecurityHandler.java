@@ -23,21 +23,21 @@ import java.util.Optional;
 @Slf4j
 @Component
 public class SwaggerSecurityHandler implements HandlerFunction<ServerResponse> {
-	@Autowired(required = false)
-	private SecurityConfiguration securityConfiguration;
+    @Autowired(required = false)
+    private SecurityConfiguration securityConfiguration;
 
-	/**
-	 * Handle the given request.
-	 *
-	 * @param request the request to handler
-	 * @return the response
-	 */
-	@Override
-	public Mono<ServerResponse> handle(ServerRequest request) {
-		return ServerResponse.status(HttpStatus.OK)
-			.contentType(MediaType.APPLICATION_JSON_UTF8)
-			.body(BodyInserters.fromObject(
-				Optional.ofNullable(securityConfiguration)
-					.orElse(SecurityConfigurationBuilder.builder().build())));
-	}
+    /**
+     * Handle the given request.
+     *
+     * @param request the request to handler
+     * @return the response
+     */
+    @Override
+    public Mono<ServerResponse> handle(ServerRequest request) {
+        return ServerResponse.status(HttpStatus.OK)
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .body(BodyInserters.fromObject(
+                        Optional.ofNullable(securityConfiguration)
+                                .orElse(SecurityConfigurationBuilder.builder().build())));
+    }
 }

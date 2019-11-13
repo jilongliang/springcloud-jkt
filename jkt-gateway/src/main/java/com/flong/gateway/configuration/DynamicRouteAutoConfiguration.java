@@ -14,13 +14,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan("com.flong")
 public class DynamicRouteAutoConfiguration {
-	/**
-	 * 配置文件设置为空
-	 * redis 加载为准
-	 * @return
-	 */
-	@Bean
-	public PropertiesRouteDefinitionLocator propertiesRouteDefinitionLocator() {
-		return new PropertiesRouteDefinitionLocator(new GatewayProperties());
-	}
+    /**
+     * 配置文件设置为空
+     * redis 加载为准
+     *
+     * @return
+     */
+    @Bean
+    public PropertiesRouteDefinitionLocator propertiesRouteDefinitionLocator() {
+        return new PropertiesRouteDefinitionLocator(new GatewayProperties());
+    }
 }
