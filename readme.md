@@ -1,5 +1,5 @@
 # 1、框架結構
-* kotlin + java + springcloud + maven
+* kotlin + java + springcloud + docker + maven
 
 
 # 2、參考基礎架構
