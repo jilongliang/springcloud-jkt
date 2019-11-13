@@ -33,7 +33,7 @@ OrderApplication|订单工程|7001
 # 5、脚本
 ```
 compile-update-code.sh 更新和编译代码
-
+deploy-application.sh  发布应用工程
 ```
 
 
