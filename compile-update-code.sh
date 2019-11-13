@@ -35,7 +35,7 @@ MODULES_PROJECTS=("jkt-user" "jkt-order")
 
 ##################### 3. 编译模块代码 ######################
 # 2.2 编译所有工程模块
-if [[ "$IMG_NAME" == "springcloud-kt" ]];then
+if [[ "$IMG_NAME" == "springcloud-jkt" ]];then
     cd $WORK_SPACE
     echo "当前工作目录为:"$PWD
     mvn clean install -Dmaven.test.skip=true
